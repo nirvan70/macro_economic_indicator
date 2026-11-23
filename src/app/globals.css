@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f7f6;
+  --foreground: #0f172a;
+  --font-arial: Arial, "Helvetica Neue", Helvetica, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-arial);
+  --font-display: var(--font-arial);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-arial);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
