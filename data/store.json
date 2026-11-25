@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T04:53:39.760Z",
+  "updatedAt": "2026-11-25T10:59:26.511Z",
   "observations": {
     "cpi": [
       {
@@ -2946,7 +2946,7 @@
       },
       {
         "period": "2026-11",
-        "value": 805.2,
+        "value": 909,
         "releasedAt": "2026-12-01",
         "sourceUrl": "https://unipass.customs.go.kr"
       }
@@ -36989,6 +36989,18 @@
         "value": 1337.3,
         "releasedAt": "2026-11-23",
         "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 1346.6,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-25",
+        "value": 1343.6,
+        "releasedAt": "2026-11-25",
+        "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
     "kospi": [
@@ -67375,6 +67387,18 @@
         "value": 4869.96,
         "releasedAt": "2026-11-20",
         "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 4708.54,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 5006.03,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
     "call": [
@@ -88442,6 +88466,18 @@
         "period": "2026-11-20",
         "value": 3.081,
         "releasedAt": "2026-11-20",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 3.104,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 3.096,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
@@ -140004,6 +140040,24 @@
         "period": "2026-11-20",
         "value": 3.642,
         "releasedAt": "2026-11-20",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 3.623,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 3.64,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-25",
+        "value": 3.583,
+        "releasedAt": "2026-11-25",
         "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
@@ -200513,6 +200567,18 @@
         "value": 5.04,
         "releasedAt": "2026-11-19",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+      },
+      {
+        "period": "2026-11-20",
+        "value": 4.92,
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 4.92,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
       }
     ],
     "usgdp": [
@@ -232599,7 +232665,19 @@
       {
         "period": "2026-11-20",
         "value": 22617.73,
-        "releasedAt": "2026-11-20T22:15:59.000Z",
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 24089.56,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 23733.53,
+        "releasedAt": "2026-11-24T22:15:59.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5EIXIC"
       }
     ],
@@ -268291,6 +268369,36 @@
         "value": 159.93,
         "releasedAt": "2026-11-13",
         "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
+      },
+      {
+        "period": "2026-11-16",
+        "value": 159.65,
+        "releasedAt": "2026-11-16",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
+      },
+      {
+        "period": "2026-11-17",
+        "value": 159.27,
+        "releasedAt": "2026-11-17",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
+      },
+      {
+        "period": "2026-11-18",
+        "value": 159.25,
+        "releasedAt": "2026-11-18",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
+      },
+      {
+        "period": "2026-11-19",
+        "value": 159.76,
+        "releasedAt": "2026-11-19",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
+      },
+      {
+        "period": "2026-11-20",
+        "value": 158.76,
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXJPUS"
       }
     ],
     "eurusd": [
@@ -298323,6 +298431,36 @@
         "value": 1.1034,
         "releasedAt": "2026-11-13",
         "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
+      },
+      {
+        "period": "2026-11-16",
+        "value": 1.1004,
+        "releasedAt": "2026-11-16",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
+      },
+      {
+        "period": "2026-11-17",
+        "value": 1.1016,
+        "releasedAt": "2026-11-17",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
+      },
+      {
+        "period": "2026-11-18",
+        "value": 1.0968,
+        "releasedAt": "2026-11-18",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
+      },
+      {
+        "period": "2026-11-19",
+        "value": 1.0981,
+        "releasedAt": "2026-11-19",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
+      },
+      {
+        "period": "2026-11-20",
+        "value": 1.0981,
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DEXUSEU"
       }
     ],
     "uspce": [
@@ -299764,50 +299902,50 @@
     "fedwatchHike": [
       {
         "period": "2026-12-09",
-        "value": 88.6,
-        "releasedAt": "2026-11-20",
+        "value": 97.6,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html#meeting=2026-12-09",
-        "hold": 11.4,
-        "hike25": 88.6,
-        "hike50Plus": 0,
+        "hold": 0,
+        "hike25": 97.6,
+        "hike50Plus": 2.4,
         "cut": 0,
-        "anyHike": 88.6,
+        "anyHike": 100,
         "currentTarget": "3.75%-4.00%"
       },
       {
         "period": "2027-01-27",
-        "value": 44.3,
-        "releasedAt": "2026-11-20",
+        "value": 32.6,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html#meeting=2027-01-27",
-        "hold": 4.9,
-        "hike25": 44.3,
-        "hike50Plus": 50.9,
+        "hold": 0,
+        "hike25": 32.6,
+        "hike50Plus": 67.4,
         "cut": 0,
-        "anyHike": 95.2,
+        "anyHike": 100,
         "currentTarget": "3.75%-4.00%"
       },
       {
         "period": "2027-03-17",
-        "value": 25.8,
-        "releasedAt": "2026-11-20",
+        "value": 12.9,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html#meeting=2027-03-17",
-        "hold": 2.6,
-        "hike25": 25.8,
-        "hike50Plus": 71.6,
+        "hold": 0,
+        "hike25": 12.9,
+        "hike50Plus": 87.1,
         "cut": 0,
-        "anyHike": 97.4,
+        "anyHike": 100,
         "currentTarget": "3.75%-4.00%"
       },
       {
         "period": "2027-04-28",
-        "value": 21.8,
-        "releasedAt": "2026-11-20",
+        "value": 9.9,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html#meeting=2027-04-28",
-        "hold": 2.1,
-        "hike25": 21.8,
-        "hike50Plus": 76,
+        "hold": 0,
+        "hike25": 9.9,
+        "hike50Plus": 90.2,
         "cut": 0,
-        "anyHike": 97.8,
+        "anyHike": 100.1,
         "currentTarget": "3.75%-4.00%"
       }
     ],
@@ -329829,6 +329967,18 @@
         "value": 4.62,
         "releasedAt": "2026-11-19",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS1"
+      },
+      {
+        "period": "2026-11-20",
+        "value": 4.51,
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS1"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 4.57,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS1"
       }
     ],
     "ust30y": [
@@ -359848,6 +359998,18 @@
         "period": "2026-11-19",
         "value": 5.4,
         "releasedAt": "2026-11-19",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+      },
+      {
+        "period": "2026-11-20",
+        "value": 5.31,
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 5.29,
+        "releasedAt": "2026-11-23",
         "sourceUrl": "https://fred.stlouisfed.org/series/DGS30"
       }
     ],
@@ -391317,7 +391479,19 @@
       {
         "period": "2026-11-20",
         "value": 6910.39,
-        "releasedAt": "2026-11-20T21:35:54.000Z",
+        "releasedAt": "2026-11-20",
+        "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 7237.17,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 7201.09,
+        "releasedAt": "2026-11-24T21:54:10.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/%5EGSPC"
       }
     ],
@@ -421699,6 +421873,18 @@
         "value": 645.68,
         "releasedAt": "2026-11-20",
         "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 635.45,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 665.88,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
     "usdjia": [
@@ -436784,6 +436970,18 @@
         "period": "2026-11-20",
         "value": 48147.33,
         "releasedAt": "2026-11-20",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DJIA"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 49595.31,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://fred.stlouisfed.org/series/DJIA"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 50018.7,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://fred.stlouisfed.org/series/DJIA"
       }
     ],
@@ -466973,6 +467171,24 @@
         "value": 83.5,
         "releasedAt": "2026-11-23T04:43:35.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/CL%3DF"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 80.17,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://finance.yahoo.com/quote/CL%3DF"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 82.05,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://finance.yahoo.com/quote/CL%3DF"
+      },
+      {
+        "period": "2026-11-25",
+        "value": 81.11,
+        "releasedAt": "2026-11-25T10:49:18.000Z",
+        "sourceUrl": "https://finance.yahoo.com/quote/CL%3DF"
       }
     ],
     "oilDubai": [
@@ -485616,6 +485832,18 @@
         "period": "2026-11-20",
         "value": 91.38,
         "releasedAt": "2026-11-20",
+        "sourceUrl": "https://finance.yahoo.com/quote/DBL%3DF"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 90.44,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://finance.yahoo.com/quote/DBL%3DF"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 90.55,
+        "releasedAt": "2026-11-24",
         "sourceUrl": "https://finance.yahoo.com/quote/DBL%3DF"
       }
     ],
@@ -517105,6 +517333,24 @@
         "value": 103.78,
         "releasedAt": "2026-11-23T04:43:34.000Z",
         "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
+      },
+      {
+        "period": "2026-11-23",
+        "value": 104.32,
+        "releasedAt": "2026-11-23",
+        "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
+      },
+      {
+        "period": "2026-11-24",
+        "value": 103.81,
+        "releasedAt": "2026-11-24",
+        "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
+      },
+      {
+        "period": "2026-11-25",
+        "value": 103.97,
+        "releasedAt": "2026-11-25T10:49:20.000Z",
+        "sourceUrl": "https://finance.yahoo.com/quote/DX-Y.NYB"
       }
     ],
     "consumerSentiment": [
@@ -518426,6 +518672,12 @@
         "period": "2026-10",
         "value": 105.4,
         "releasedAt": "2026-11-25",
+        "sourceUrl": "https://ecos.bok.or.kr"
+      },
+      {
+        "period": "2026-11",
+        "value": 103.1,
+        "releasedAt": "2026-12-25",
         "sourceUrl": "https://ecos.bok.or.kr"
       }
     ],
@@ -522734,107 +522986,135 @@
     {
       "indicatorId": "trade",
       "headline": "2026-10 품목별 수출 움직임",
-      "detail": "반도체(집적회로) 수출 -31억달러(전월비) · 여객선·화물선 수출 -11.4억달러(전월비) · 석유제품 수출 -5.8억달러(전월비) / 반도체(집적회로) 수출 -31억달러(전월비) · 여객선·화물선 수출 -11.4억달러(전월비) · 석유제품 수출 -5.8억달러(전월비) / 공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "detail": "반도체(집적회로) 수출 -31억달러(전월비) · 여객선·화물선 수출 -11.4억달러(전월비) · 석유제품 수출 -5.8억달러(전월비) / 공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-23T04:53:39.683Z"
+      "updatedAt": "2026-11-25T10:59:26.340Z"
+    },
+    {
+      "indicatorId": "oilDubai",
+      "headline": "두바이 원유 2026-11-24 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-25T10:59:25.747Z"
     },
     {
       "indicatorId": "oilWti",
-      "headline": "WTI 원유 2026-11-22 수치 갱신",
+      "headline": "WTI 원유 2026-11-25 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-23T04:53:38.722Z"
-    },
-    {
-      "indicatorId": "usdIndex",
-      "headline": "달러 인덱스 2026-11-22 수치 갱신",
-      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
-      "status": "draft",
-      "updatedAt": "2026-11-23T04:53:36.807Z"
-    },
-    {
-      "indicatorId": "call",
-      "headline": "콜금리 2026-11-20 수치 갱신",
-      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
-      "status": "draft",
-      "updatedAt": "2026-11-23T02:15:53.123Z"
-    },
-    {
-      "indicatorId": "usdkrw",
-      "headline": "원/달러 환율 2026-11-23 수치 갱신",
-      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
-      "status": "draft",
-      "updatedAt": "2026-11-23T02:15:32.665Z"
+      "updatedAt": "2026-11-25T10:59:25.322Z"
     },
     {
       "indicatorId": "usdjia",
-      "headline": "다우존스 2026-11-20 수치 갱신",
+      "headline": "다우존스 2026-11-24 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:12.766Z"
+      "updatedAt": "2026-11-25T10:59:24.896Z"
     },
     {
       "indicatorId": "ussp500",
-      "headline": "S&P 500 2026-11-19 수치 갱신",
+      "headline": "S&P 500 2026-11-24 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:12.557Z"
+      "updatedAt": "2026-11-25T10:59:24.634Z"
     },
     {
       "indicatorId": "usnasdaq",
-      "headline": "나스닥 종합 2026-11-19 수치 갱신",
+      "headline": "나스닥 종합 2026-11-24 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:12.482Z"
+      "updatedAt": "2026-11-25T10:59:24.222Z"
+    },
+    {
+      "indicatorId": "usdIndex",
+      "headline": "달러 인덱스 2026-11-25 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-25T10:59:23.805Z"
     },
     {
       "indicatorId": "fedwatchHike",
       "headline": "연준 25bp 인상 확률 2026-12-09 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:11.775Z"
+      "updatedAt": "2026-11-25T10:59:22.504Z"
     },
     {
       "indicatorId": "ust30y",
-      "headline": "미국채 30년물 2026-11-19 수치 갱신",
+      "headline": "미국채 30년물 2026-11-23 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:10.316Z"
+      "updatedAt": "2026-11-25T10:59:09.235Z"
     },
     {
       "indicatorId": "ust10y",
-      "headline": "미국채 10년물 2026-11-19 수치 갱신",
+      "headline": "미국채 10년물 2026-11-23 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:10.232Z"
+      "updatedAt": "2026-11-25T10:59:09.051Z"
     },
     {
       "indicatorId": "ust1y",
-      "headline": "미국채 1년물 2026-11-19 수치 갱신",
+      "headline": "미국채 1년물 2026-11-23 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:10.130Z"
+      "updatedAt": "2026-11-25T10:59:08.560Z"
     },
     {
       "indicatorId": "ktb3y",
-      "headline": "국고채 3년 2026-11-20 수치 갱신",
+      "headline": "국고채 3년 2026-11-25 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:20:01.494Z"
+      "updatedAt": "2026-11-25T10:58:58.934Z"
+    },
+    {
+      "indicatorId": "call",
+      "headline": "콜금리 2026-11-24 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-25T10:58:48.584Z"
     },
     {
       "indicatorId": "kosdaq",
-      "headline": "KOSDAQ 2026-11-20 수치 갱신",
+      "headline": "KOSDAQ 2026-11-24 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:19:43.638Z"
+      "updatedAt": "2026-11-25T10:58:38.241Z"
     },
     {
       "indicatorId": "kospi",
-      "headline": "KOSPI 2026-11-20 수치 갱신",
+      "headline": "KOSPI 2026-11-24 수치 갱신",
       "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
       "status": "draft",
-      "updatedAt": "2026-11-22T07:19:35.160Z"
+      "updatedAt": "2026-11-25T10:58:28.474Z"
+    },
+    {
+      "indicatorId": "usdkrw",
+      "headline": "원/달러 환율 2026-11-25 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-25T10:58:17.419Z"
+    },
+    {
+      "indicatorId": "eurusd",
+      "headline": "유로/달러 환율 2026-11-20 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-24T05:18:05.905Z"
+    },
+    {
+      "indicatorId": "usdjpy",
+      "headline": "엔/달러 환율 2026-11-20 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-24T05:18:04.278Z"
+    },
+    {
+      "indicatorId": "consumerSentiment",
+      "headline": "소비자심리지수 2026-11 수치 갱신",
+      "detail": "공식 API 반영 자동 초안입니다. 원문 보도자료·기여도표를 확인한 뒤 요인을 다듬어 확정하세요.",
+      "status": "draft",
+      "updatedAt": "2026-11-24T05:17:51.048Z"
     },
     {
       "indicatorId": "employment",
@@ -522951,7 +523231,11 @@
     "ussp500",
     "usdjia",
     "usdIndex",
-    "oilWti"
+    "oilWti",
+    "consumerSentiment",
+    "usdjpy",
+    "eurusd",
+    "oilDubai"
   ],
   "lastNotifiedAt": "2026-11-18T10:26:15.830Z",
   "tradeItems": [
@@ -523148,7 +523432,7 @@
       "balEok": -0.5
     }
   ],
-  "tradeItemsUpdatedAt": "2026-11-23T04:53:39.682Z",
+  "tradeItemsUpdatedAt": "2026-11-25T10:59:26.338Z",
   "tradeExports": [
     {
       "period": "2006-01",
@@ -524652,7 +524936,7 @@
     },
     {
       "period": "2026-11",
-      "value": 805.2,
+      "value": 909,
       "releasedAt": "2026-12-01",
       "sourceUrl": "https://unipass.customs.go.kr"
     }
