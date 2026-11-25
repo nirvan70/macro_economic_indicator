@@ -44,3 +44,4 @@ SMTP(`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)를 채우면 실제 메일을 보�
 1. KOSIS / ECOS / 관세청 API 키 연결 (`scripts/ingest.ts` stub 교체)
 2. 요인 초안을 보도자료 기반으로 고도화
 3. 팀 공유 시 DB·배포(Vercel 등)로 전환
+# macro_economic_indicator
