@@ -47,3 +47,4 @@ SMTP(`SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`)를 채우면 실제 메일을 보�
 # macro_economic_indicator
 # macro_economic_indicator
 # macro_economic_indicator
+# macro_economic_indicator
