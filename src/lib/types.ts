@@ -118,6 +118,22 @@ export type ConsumptionComponentBundle = {
   yoy: Observation[];
 };
 
+export type StoredInstitutionOutlook = {
+  institution: "bok" | "kdi" | "oecd" | "imf";
+  nameKo: string;
+  nameEn: string;
+  title: string;
+  publishedAt: string;
+  sourceUrl: string;
+  growthThisYear: number;
+  growthNextYear: number;
+  cpiThisYear: number | null;
+  cpiNextYear: number | null;
+  thisYearLabel: string;
+  nextYearLabel: string;
+  fetchedAt: string;
+};
+
 export interface DataStore {
   updatedAt: string;
   observations: Record<IndicatorId, Observation[]>;
@@ -125,6 +141,10 @@ export interface DataStore {
   upcoming: UpcomingRelease[];
   lastNotifiedAt?: string;
   pendingNotifications: IndicatorId[];
+  /** 주요 기관(한은·IMF·OECD) 경제전망 캐시 */
+  outlooks?: StoredInstitutionOutlook[];
+  outlooksCheckedAt?: string;
+  outlooksUpdatedAt?: string;
   /** 관세청 품목별 수출입(주요 HS) */
   tradeItems?: TradeItemAgg[];
   tradeItemsUpdatedAt?: string;

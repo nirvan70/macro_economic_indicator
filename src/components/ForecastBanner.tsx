@@ -1,3 +1,4 @@
+import { UpdateForecastButton } from "@/components/UpdateForecastButton";
 import type { InstitutionOutlook } from "@/lib/sources/outlook-types";
 import { formatValue } from "@/lib/format";
 
@@ -105,16 +106,19 @@ export function ForecastBanner({
         aria-hidden
       />
       <div className="relative space-y-4">
-        <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-200">
-            Macro Outlook
-          </p>
-          <h2 className="mt-1 font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-white sm:text-xl">
-            주요 기관 한국 경제전망
-          </h2>
-          <p className="mt-1 text-xs text-teal-100/85">
-            한국은행 · IMF · OECD의 성장률·소비자물가 전망치
-          </p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-200">
+              Macro Outlook
+            </p>
+            <h2 className="mt-1 font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-white sm:text-xl">
+              주요 기관 한국 경제전망
+            </h2>
+            <p className="mt-1 text-xs text-teal-100/85">
+              한국은행 · IMF · OECD의 성장률·소비자물가 전망치
+            </p>
+          </div>
+          <UpdateForecastButton />
         </div>
 
         <div className="grid gap-3 md:grid-cols-3">

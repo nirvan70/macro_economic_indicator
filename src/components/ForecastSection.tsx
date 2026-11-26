@@ -1,15 +1,10 @@
 import { ForecastBanner } from "@/components/ForecastBanner";
-import { fetchBokOutlook } from "@/lib/sources/bok-outlook";
-import { fetchImfOutlook } from "@/lib/sources/imf-outlook";
-import { fetchOecdOutlook } from "@/lib/sources/oecd-outlook";
+import { getOutlooksForDisplay } from "@/lib/outlooks";
 
 export async function ForecastSection() {
-  const [bok, imf, oecd] = await Promise.all([
-    fetchBokOutlook(),
-    fetchImfOutlook(),
-    fetchOecdOutlook(),
-  ]);
-  return <ForecastBanner outlooks={[bok, imf, oecd]} />;
+  // Server-side startup check (throttled): refresh store when stale.
+  const outlooks = await getOutlooksForDisplay();
+  return <ForecastBanner outlooks={outlooks} />;
 }
 
 export function ForecastSectionFallback() {

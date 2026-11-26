@@ -549661,5 +549661,54 @@
       "releasedAt": "2026-10-28",
       "sourceUrl": "https://ecos.bok.or.kr"
     }
-  ]
+  ],
+  "outlooks": [
+    {
+      "institution": "bok",
+      "nameKo": "한국은행",
+      "nameEn": "BOK",
+      "title": "경제전망(2026년 8월)",
+      "publishedAt": "2026-08-27",
+      "sourceUrl": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?menuNo=200690&nttId=11064211",
+      "growthThisYear": 3.3,
+      "growthNextYear": 2.9,
+      "cpiThisYear": 2.7,
+      "cpiNextYear": 2.3,
+      "thisYearLabel": "2026",
+      "nextYearLabel": "2027",
+      "fetchedAt": "2026-11-26T01:47:59.251Z"
+    },
+    {
+      "institution": "imf",
+      "nameKo": "IMF",
+      "nameEn": "IMF",
+      "title": "연례협의 스태프 미션(2026년 11월)",
+      "publishedAt": "2026-11-17",
+      "sourceUrl": "https://www.korea.net/NewsFocus/Business/view?articleId=303057",
+      "growthThisYear": 3.9,
+      "growthNextYear": 3.3,
+      "cpiThisYear": 2.7,
+      "cpiNextYear": 2.3,
+      "thisYearLabel": "2026",
+      "nextYearLabel": "2027",
+      "fetchedAt": "2026-11-26T01:47:58.363Z"
+    },
+    {
+      "institution": "oecd",
+      "nameKo": "OECD",
+      "nameEn": "OECD",
+      "title": "중간 경제전망(2026년 9월)",
+      "publishedAt": "2026-09-23",
+      "sourceUrl": "https://news.sbs.co.kr/english/article.do?news_id=N1008768163",
+      "growthThisYear": 3.7,
+      "growthNextYear": 2.6,
+      "cpiThisYear": 3,
+      "cpiNextYear": 2.7,
+      "thisYearLabel": "2026",
+      "nextYearLabel": "2027",
+      "fetchedAt": "2026-11-26T01:47:58.336Z"
+    }
+  ],
+  "outlooksCheckedAt": "2026-11-26T01:47:59.252Z",
+  "outlooksUpdatedAt": "2026-11-26T01:47:37.529Z"
 }
