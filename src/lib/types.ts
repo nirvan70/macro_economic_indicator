@@ -3,9 +3,11 @@ export type IndicatorId =
   | "trade"
   | "industrial"
   | "retail"
+  | "serviceSales"
   | "employment"
   | "unemployment"
   | "consumerSentiment"
+  | "compositeIndex"
   | "coincidentIndex"
   | "leadingIndex"
   | "gdp"
@@ -131,9 +133,10 @@ export interface DataStore {
   /** 민간소비 형태별(내구·준내구·비내구) 전기비·전년동기비 */
   consumptionComponents?: ConsumptionComponentBundle[];
   consumptionComponentsUpdatedAt?: string;
-  /** 산업활동·소매판매 전년동월비 (관측값 observations는 전월비) */
+  /** 산업활동·소매판매·서비스판매 전년동월비 (관측값 observations는 전월비) */
   industrialYoy?: Observation[];
   retailYoy?: Observation[];
+  serviceSalesYoy?: Observation[];
   /** 국민계정 원계열 전년동기비 (관측값 observations는 계절조정 전분기비) */
   gdpYoy?: Observation[];
   consumptionYoy?: Observation[];

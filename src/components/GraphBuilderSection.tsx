@@ -38,11 +38,21 @@ export function GraphBuilderSection({
 
   return (
     <section
+      id="graph-builder"
       aria-labelledby="graph-builder-heading"
-      className="space-y-4 rounded-sm bg-white/75 px-3 py-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur sm:px-5"
+      className="scroll-mt-24 space-y-4 rounded-sm bg-white/75 px-3 py-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur sm:px-5"
     >
-      <div className="sr-only">
-        <h2 id="graph-builder-heading">그래프 그리기 및 다운로드</h2>
+      <div>
+        <h2
+          id="graph-builder-heading"
+          className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-slate-900"
+        >
+          그래프 그리기 및 다운로드
+        </h2>
+        <p className="mt-1 text-sm text-slate-600">
+          그룹을 고른 뒤, 같은 주기 지표를 복수 선택해 기간·축을 지정하고 비교
+          그래프를 만듭니다.
+        </p>
       </div>
 
       <div

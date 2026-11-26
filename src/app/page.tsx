@@ -3,11 +3,13 @@ import {
   ForecastSection,
   ForecastSectionFallback,
 } from "@/components/ForecastSection";
+import { GraphBuilderSection } from "@/components/GraphBuilderSection";
 import { GroupJumpNav } from "@/components/GroupJumpNav";
 import {
   HeadlineTickerFallback,
   HeadlineTickerSection,
 } from "@/components/HeadlineTickerSection";
+import { HistoryTeasers } from "@/components/HistoryTeasers";
 import { InstitutionLinks } from "@/components/InstitutionLinks";
 import { MoversSummary } from "@/components/MoversSummary";
 import { NewsSection, NewsSectionFallback } from "@/components/NewsSection";
@@ -74,11 +76,13 @@ export default async function Home() {
           </aside>
           <div className="flex min-w-0 flex-col gap-14">
             <SummaryCards snapshots={snapshots} store={store} />
+            <GraphBuilderSection snapshots={snapshots} store={store} />
             <div id="related-news" className="scroll-mt-24">
               <Suspense fallback={<NewsSectionFallback />}>
                 <NewsSection />
               </Suspense>
             </div>
+            <HistoryTeasers snapshots={snapshots} store={store} />
           </div>
         </div>
       </main>

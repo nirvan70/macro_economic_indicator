@@ -146,14 +146,16 @@ export default async function IndicatorHistoryPage({ params }: PageProps) {
             </p>
             <FedwatchBarChart series={series} unit="%" digits={digits} />
           </section>
-        ) : indicatorId === "industrial" || indicatorId === "retail" ? (
+        ) : indicatorId === "industrial" ||
+          indicatorId === "retail" ||
+          indicatorId === "serviceSales" ? (
           <section className="rounded-sm bg-white/75 px-3 py-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur sm:px-5">
             <h2 className="mb-4 font-[family-name:var(--font-display)] text-xl text-slate-900">
               과거 추이
             </h2>
             <p className="mb-4 text-sm text-slate-600">
               전월비(계절조정)와 전년동월비
-              {indicatorId === "retail" ? "(불변지수)" : "(원계열)"}를 함께
+              {indicatorId === "industrial" ? "(원계열)" : "(불변지수)"}를 함께
               표시합니다.
             </p>
             <DualHistoryChart
@@ -161,7 +163,9 @@ export default async function IndicatorHistoryPage({ params }: PageProps) {
               secondary={
                 indicatorId === "industrial"
                   ? (store.industrialYoy ?? [])
-                  : (store.retailYoy ?? [])
+                  : indicatorId === "retail"
+                    ? (store.retailYoy ?? [])
+                    : (store.serviceSalesYoy ?? [])
               }
               primaryLabel="전월비"
               secondaryLabel="전년동월비"

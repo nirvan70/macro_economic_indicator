@@ -3,9 +3,13 @@ import type { Observation } from "../types";
 export type YahooIndexSymbol =
   | "^IXIC"
   | "^GSPC"
+  | "^KS11"
+  | "^KQ11"
   | "DX-Y.NYB"
   | "CL=F"
-  | "DBL=F";
+  | "DBL=F"
+  | "USDJPY=X"
+  | "EURUSD=X";
 
 type YahooChartResult = {
   meta?: {
@@ -33,9 +37,9 @@ function roundN(n: number, digits: number): number {
   return Number(n.toFixed(digits));
 }
 
-function nyDateFromUnix(sec: number): string {
+function dateFromUnix(sec: number, timeZone: string): string {
   return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/New_York",
+    timeZone,
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
@@ -77,14 +81,20 @@ async function fetchYahooChart(
 
 /**
  * Daily closes from Yahoo Finance chart API, with the latest
- * regularMarketPrice stamped on today's NY session date when available.
+ * regularMarketPrice stamped on the session date when available.
  */
 export async function fetchYahooIndexSeries(
   symbol: YahooIndexSymbol,
-  opts: { yearsBack?: number; digits?: number } = {},
+  opts: {
+    yearsBack?: number;
+    digits?: number;
+    /** Calendar used for bar/session dates. Default: America/New_York. */
+    timeZone?: string;
+  } = {},
 ): Promise<Observation[]> {
   const yearsBack = opts.yearsBack ?? 20;
   const digits = opts.digits ?? 2;
+  const timeZone = opts.timeZone ?? "America/New_York";
   const result = await fetchYahooChart(symbol, yearsBack);
   const timestamps = result.timestamp ?? [];
   const closes = result.indicators?.quote?.[0]?.close ?? [];
@@ -97,7 +107,7 @@ export async function fetchYahooIndexSeries(
   for (let i = 0; i < timestamps.length; i += 1) {
     const close = closes[i];
     if (close == null || !Number.isFinite(close)) continue;
-    const period = nyDateFromUnix(timestamps[i]);
+    const period = dateFromUnix(timestamps[i], timeZone);
     if (period < cutoffIso) continue;
     byPeriod.set(period, {
       period,
@@ -115,7 +125,7 @@ export async function fetchYahooIndexSeries(
     liveTime != null &&
     Number.isFinite(liveTime)
   ) {
-    const period = nyDateFromUnix(liveTime);
+    const period = dateFromUnix(liveTime, timeZone);
     if (period >= cutoffIso) {
       byPeriod.set(period, {
         period,

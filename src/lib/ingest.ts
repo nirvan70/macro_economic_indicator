@@ -20,6 +20,7 @@ import {
   fetchNaExportDual,
   fetchNaImportDual,
   fetchRetailDual,
+  fetchServiceSalesDual,
   fetchTradeBundle,
 } from "@/lib/sources/fetchers";
 import { readStore, writeStore } from "@/lib/store";
@@ -169,6 +170,9 @@ export async function runIngest(
     | Awaited<ReturnType<typeof fetchIndustrialDual>>
     | null = null;
   let retailDual: Awaited<ReturnType<typeof fetchRetailDual>> | null = null;
+  let serviceSalesDual: Awaited<
+    ReturnType<typeof fetchServiceSalesDual>
+  > | null = null;
   type NaDualId =
     | "gdp"
     | "consumption"
@@ -207,6 +211,18 @@ export async function runIngest(
           `[retail-yoy] ${retailDual.yoy.length} pts` +
             (retailDual.yoy.length
               ? `, latest ${retailDual.yoy.at(-1)?.period}=${retailDual.yoy.at(-1)?.value}`
+              : ""),
+        );
+      } else if (id === "serviceSales") {
+        if (!serviceSalesDual) {
+          serviceSalesDual = await fetchServiceSalesDual(history);
+        }
+        incoming = serviceSalesDual.mom;
+        store.serviceSalesYoy = serviceSalesDual.yoy;
+        log(
+          `[serviceSales-yoy] ${serviceSalesDual.yoy.length} pts` +
+            (serviceSalesDual.yoy.length
+              ? `, latest ${serviceSalesDual.yoy.at(-1)?.period}=${serviceSalesDual.yoy.at(-1)?.value}`
               : ""),
         );
       } else if (

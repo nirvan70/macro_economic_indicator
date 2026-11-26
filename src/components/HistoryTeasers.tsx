@@ -53,11 +53,21 @@ export function HistoryTeasers({
 }) {
   return (
     <section
+      id="history-longrun"
       aria-labelledby="history-heading"
-      className="space-y-3 rounded-sm bg-white/75 px-3 py-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur sm:px-5"
+      className="scroll-mt-24 space-y-3 rounded-sm bg-white/75 px-3 py-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] backdrop-blur sm:px-5"
     >
-      <div className="sr-only">
-        <h2 id="history-heading">데이터 장기시계열(2000년~)</h2>
+      <div>
+        <h2
+          id="history-heading"
+          className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-slate-900"
+        >
+          데이터 장기시계열(2000년~)
+        </h2>
+        <p className="mt-1 text-sm text-slate-600">
+          2000년 1분기(월별·일별은 2000년 1월)부터의 장기 추이를 보여 줍니다.
+          지표를 누르면 과거 추이 그래프와 최근 관측표를 볼 수 있습니다.
+        </p>
       </div>
       <div className="space-y-5">
         {INDICATOR_GROUPS.map((group) => {

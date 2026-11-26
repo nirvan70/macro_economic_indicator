@@ -400,6 +400,39 @@ export async function fetchRetailSeries(
   return dual.mom;
 }
 
+/**
+ * Service sales (서비스업생산): MoM from SA (901Y038/I51A/3),
+ * YoY from constant-price (I51A/2). Horizon: last 10 years.
+ */
+export async function fetchServiceSalesDual(
+  _history: boolean,
+): Promise<ActivityDualSeries> {
+  const monthsBack = RETAIL_YEARS * 12 + 12;
+  const sa = await fetchMonthlyLevelsChunked(
+    ["901Y038", "I51A", "3"],
+    monthsBack,
+  );
+  if (!ecosKeyIsSample()) {
+    await new Promise((r) => setTimeout(r, 250));
+  }
+  const real = await fetchMonthlyLevelsChunked(
+    ["901Y038", "I51A", "2"],
+    monthsBack,
+  );
+  return {
+    mom: trimMonthly(levelsToMom(sa, 28), RETAIL_YEARS),
+    yoy: trimMonthly(levelsToYoy(real, 28), RETAIL_YEARS),
+  };
+}
+
+/** Service sales MoM % of SA index 901Y038 / I51A / 3 — last 10 years. */
+export async function fetchServiceSalesSeries(
+  history: boolean,
+): Promise<Observation[]> {
+  const dual = await fetchServiceSalesDual(history);
+  return dual.mom;
+}
+
 async function fetchLaborRateSeries(
   itemCode: string,
   history: boolean,
@@ -472,6 +505,13 @@ export async function fetchConsumerSentimentSeries(
   history: boolean,
 ): Promise<Observation[]> {
   return fetchMonthlyLevelSeries(["511Y002", "FME", "99988"], history, 25, 1);
+}
+
+/** Coincident composite index — ECOS 901Y067 / I16B. */
+export async function fetchCompositeIndexSeries(
+  history: boolean,
+): Promise<Observation[]> {
+  return fetchMonthlyLevelSeries(["901Y067", "I16B"], history, 28, 1);
 }
 
 /** Coincident index cyclical component — ECOS 901Y067 / I16D. */
@@ -803,14 +843,26 @@ export async function fetchUsdKrwSeries(history: boolean): Promise<Observation[]
   return fetchDailyLevelSeries("731Y001", "0000001", history, 1);
 }
 
-export async function fetchKospiSeries(history: boolean): Promise<Observation[]> {
-  return fetchDailyLevelSeries("802Y001", "0001000", history, 2);
+/** KOSPI — Yahoo Finance ^KS11 (live quote + daily history). */
+export async function fetchKospiSeries(
+  _history: boolean,
+): Promise<Observation[]> {
+  return fetchYahooIndexSeries("^KS11", {
+    yearsBack: FRED_YEARS,
+    digits: 2,
+    timeZone: "Asia/Seoul",
+  });
 }
 
+/** KOSDAQ — Yahoo Finance ^KQ11 (live quote + daily history). */
 export async function fetchKosdaqSeries(
-  history: boolean,
+  _history: boolean,
 ): Promise<Observation[]> {
-  return fetchDailyLevelSeries("802Y001", "0089000", history, 2);
+  return fetchYahooIndexSeries("^KQ11", {
+    yearsBack: FRED_YEARS,
+    digits: 2,
+    timeZone: "Asia/Seoul",
+  });
 }
 
 export async function fetchCallSeries(history: boolean): Promise<Observation[]> {
@@ -942,25 +994,23 @@ export async function fetchOilDubaiSeries(
   });
 }
 
-/** Yen per USD — FRED DEXJPUS. */
+/** Yen per USD — Yahoo Finance USDJPY=X. */
 export async function fetchUsdJpySeries(
   _history: boolean,
 ): Promise<Observation[]> {
-  return fetchFredLevelSeries("DEXJPUS", {
+  return fetchYahooIndexSeries("USDJPY=X", {
     yearsBack: FRED_YEARS,
     digits: 2,
-    forceKind: "daily",
   });
 }
 
-/** USD per EUR — FRED DEXUSEU. */
+/** USD per EUR — Yahoo Finance EURUSD=X. */
 export async function fetchEurUsdSeries(
   _history: boolean,
 ): Promise<Observation[]> {
-  return fetchFredLevelSeries("DEXUSEU", {
+  return fetchYahooIndexSeries("EURUSD=X", {
     yearsBack: FRED_YEARS,
     digits: 4,
-    forceKind: "daily",
   });
 }
 
@@ -975,12 +1025,16 @@ export async function fetchIndicatorSeries(
       return fetchIndustrialSeries(history);
     case "retail":
       return fetchRetailSeries(history);
+    case "serviceSales":
+      return fetchServiceSalesSeries(history);
     case "employment":
       return fetchEmploymentSeries(history);
     case "unemployment":
       return fetchUnemploymentSeries(history);
     case "consumerSentiment":
       return fetchConsumerSentimentSeries(history);
+    case "compositeIndex":
+      return fetchCompositeIndexSeries(history);
     case "coincidentIndex":
       return fetchCoincidentIndexSeries(history);
     case "leadingIndex":

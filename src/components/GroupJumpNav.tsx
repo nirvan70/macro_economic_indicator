@@ -1,17 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 const ICON_CLASS =
-  "h-[2.85rem] w-[2.85rem] drop-shadow-[0_2px_2px_rgba(15,23,42,0.18)] sm:h-[3.15rem] sm:w-[3.15rem]";
+  "h-[2.35rem] w-[2.35rem] drop-shadow-[0_2px_2px_rgba(15,23,42,0.18)] transition duration-300 ease-out group-hover:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] group-active:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] sm:h-[2.6rem] sm:w-[2.6rem]";
 
 const NAV: {
   id: string;
-  /** In-page scroll target. Omit when `href` is set. */
-  targetId?: string;
-  /** Navigate to a dedicated page instead of scrolling. */
-  href?: string;
+  targetId: string;
   label: ReactNode;
   icon: ReactNode;
 }[] = [
@@ -205,7 +201,7 @@ const NAV: {
   },
   {
     id: "graph-builder",
-    href: "/graph",
+    targetId: "graph-builder",
     label: (
       <>
         그래프 그리기
@@ -268,7 +264,7 @@ const NAV: {
   },
   {
     id: "history-longrun",
-    href: "/history",
+    targetId: "history-longrun",
     label: "장기시계열",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" aria-hidden className={ICON_CLASS}>
@@ -298,12 +294,12 @@ const NAV: {
 ];
 
 const navItemClass =
-  "group flex w-full max-w-[7.5rem] flex-col items-center gap-2.5 text-center transition";
+  "group flex w-full max-w-[6.5rem] touch-manipulation flex-col items-center gap-2 text-center transition select-none";
 
 const iconShellClass =
-  "relative z-0 flex h-[5.15rem] w-[5.15rem] origin-center items-center justify-center rounded-full text-slate-800 transition-all duration-300 ease-out group-hover:z-10 group-hover:-translate-y-1.5 group-hover:scale-[1.28] group-hover:text-slate-950 sm:h-[5.6rem] sm:w-[5.6rem]";
+  "relative z-0 flex h-[4.35rem] w-[4.35rem] origin-center items-center justify-center rounded-full text-slate-800 transition-all duration-300 ease-out group-hover:z-10 group-hover:-translate-y-1.5 group-hover:scale-[1.28] group-hover:text-teal-900 group-active:z-10 group-active:-translate-y-1.5 group-active:scale-[1.22] group-active:text-teal-900 sm:h-[4.75rem] sm:w-[4.75rem]";
 
-const iconShellStyle = {
+const iconShellStyleIdle = {
   background:
     "radial-gradient(circle at 32% 28%, #f7f9fd 0%, #dce5f4 46%, #b8c6de 100%)",
   boxShadow:
@@ -312,16 +308,21 @@ const iconShellStyle = {
 
 function NavIconShell({ icon }: { icon: ReactNode }) {
   return (
-    <span className={iconShellClass} style={iconShellStyle}>
+    <span
+      className={`${iconShellClass} group-hover:[background:radial-gradient(circle_at_32%_28%,#ecfdf5_0%,#99f6e4_48%,#0d9488_100%)] group-hover:[box-shadow:inset_0_2px_3px_rgba(255,255,255,0.7),inset_0_-6px_10px_rgba(13,148,136,0.28),0_12px_18px_-8px_rgba(13,148,136,0.45)] group-active:[background:radial-gradient(circle_at_32%_28%,#ecfdf5_0%,#99f6e4_48%,#0d9488_100%)] group-active:[box-shadow:inset_0_2px_3px_rgba(255,255,255,0.7),inset_0_-6px_10px_rgba(13,148,136,0.28),0_12px_18px_-8px_rgba(13,148,136,0.45)]`}
+      style={iconShellStyleIdle}
+    >
       <span
-        className="pointer-events-none absolute inset-[7%] rounded-full opacity-70 transition group-hover:opacity-90"
+        className="pointer-events-none absolute inset-[7%] rounded-full opacity-70 transition group-hover:opacity-95 group-active:opacity-95"
         style={{
           background:
             "radial-gradient(circle at 30% 22%, rgba(255,255,255,0.75) 0%, transparent 42%)",
         }}
         aria-hidden
       />
-      <span className="relative z-[1]">{icon}</span>
+      <span className="relative z-[1] transition duration-300 group-hover:scale-105 group-active:scale-105">
+        {icon}
+      </span>
     </span>
   );
 }
@@ -339,25 +340,16 @@ export function GroupJumpNav() {
       <ul className="grid grid-cols-4 gap-x-3 gap-y-5 sm:grid-cols-7 sm:gap-x-3">
         {NAV.map((item) => (
           <li key={item.id} className="flex justify-center">
-            {item.href ? (
-              <Link href={item.href} className={navItemClass}>
-                <NavIconShell icon={item.icon} />
-                <span className="text-[13px] font-medium leading-snug text-slate-800 group-hover:text-slate-950">
-                  {item.label}
-                </span>
-              </Link>
-            ) : (
-              <button
-                type="button"
-                onClick={() => item.targetId && jumpTo(item.targetId)}
-                className={navItemClass}
-              >
-                <NavIconShell icon={item.icon} />
-                <span className="text-[13px] font-medium leading-snug text-slate-800 group-hover:text-slate-950">
-                  {item.label}
-                </span>
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => jumpTo(item.targetId)}
+              className={navItemClass}
+            >
+              <NavIconShell icon={item.icon} />
+              <span className="text-[13px] font-medium leading-snug text-slate-800 transition group-hover:text-teal-900 group-active:text-teal-900">
+                {item.label}
+              </span>
+            </button>
           </li>
         ))}
       </ul>

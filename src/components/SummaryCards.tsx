@@ -33,7 +33,10 @@ function IndicatorCard({
   /** 국민계정 카드용 전년동기비 시계열 */
   yoySeries?: Observation[];
 }) {
-  const isMomYoyCard = item.id === "industrial" || item.id === "retail";
+  const isMomYoyCard =
+    item.id === "industrial" ||
+    item.id === "retail" ||
+    item.id === "serviceSales";
   const isNaCard =
     item.id === "gdp" ||
     item.id === "consumption" ||
@@ -225,6 +228,7 @@ function IndicatorCard({
               전기비 {formatSigned(item.delta, item.valueDigits)}%p
             </p>
           ) : item.id === "consumerSentiment" ||
+            item.id === "compositeIndex" ||
             item.id === "coincidentIndex" ||
             item.id === "leadingIndex" ? (
             <p className={`mt-1 text-[11px] tabular-nums ${tone}`}>
@@ -249,7 +253,7 @@ function IndicatorCard({
                   values={values}
                   periods={periods}
                   barColor={stroke}
-                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-[4.75rem] group-hover/spark:w-52"
+                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-28 group-hover/spark:w-64"
                 />
               ) : isNaCard ? (
                 <MiniDualSpark
@@ -263,14 +267,14 @@ function IndicatorCard({
                     periods: (yoySeries ?? []).map((row) => row.period),
                     stroke: yoyStroke,
                   }}
-                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-[4.75rem] group-hover/spark:w-52"
+                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-28 group-hover/spark:w-64"
                 />
               ) : (
                 <MiniSpark
                   values={values}
                   periods={periods}
                   stroke={stroke}
-                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-[4.75rem] group-hover/spark:w-52"
+                  className="h-14 w-[6.75rem] transition-all duration-300 ease-out group-hover/spark:h-28 group-hover/spark:w-64"
                 />
               )}
             </div>
@@ -329,7 +333,10 @@ export function SummaryCards({
                   const spacedBlock =
                     cluster.label === "노동시장" ||
                     cluster.label === "물가" ||
-                    cluster.label === "심리·경기종합";
+                    cluster.label === "심리·경기종합" ||
+                    cluster.label === "주식시장" ||
+                    cluster.label === "금리" ||
+                    cluster.label === "환율";
                   return (
                   <div
                     key={cluster.label ?? "__root"}
@@ -354,6 +361,8 @@ export function SummaryCards({
                             ? store.industrialYoy
                             : item.id === "retail"
                               ? store.retailYoy
+                              : item.id === "serviceSales"
+                                ? store.serviceSalesYoy
                               : item.id === "gdp"
                                 ? store.gdpYoy
                                 : item.id === "consumption"

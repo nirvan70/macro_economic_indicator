@@ -77,7 +77,7 @@ const STOCK_MARKET_IDS = new Set([
   "usdjia",
 ]);
 
-/** Omitted from the weekly update strip (still shown on cards). */
+/** Omitted from the recent-update strip (still shown on cards). */
 const HIDDEN_FROM_RECENT_IDS = new Set([
   "ktb3y",
   "ktb10y",
@@ -86,15 +86,19 @@ const HIDDEN_FROM_RECENT_IDS = new Set([
   "ust30y",
 ]);
 
+const RECENT_WINDOW_DAYS = 5;
+const RECENT_MAX_ITEMS = 10;
+
 function isStockMarketId(id: string): boolean {
   return STOCK_MARKET_IDS.has(id);
 }
 
-/** Indicators whose latest release falls within the past 7 days (Seoul). */
+/** Indicators whose latest release falls within the past N days (Seoul). */
 export function pickRecentReleases(
   snapshots: IndicatorSnapshot[],
   store: DataStore,
-  withinDays = 7,
+  withinDays = RECENT_WINDOW_DAYS,
+  maxItems = RECENT_MAX_ITEMS,
 ): MoverRow[] {
   const today = todayUtcMidnightMs();
   const cutoff = today - (withinDays - 1) * 24 * 60 * 60 * 1000;
@@ -126,7 +130,7 @@ export function pickRecentReleases(
     })
     .filter((row): row is NonNullable<typeof row> => row !== null)
     .sort((a, b) => {
-      // Keep equity indices at the bottom of the weekly update list.
+      // Keep equity indices at the bottom of the recent update list.
       const aStock = isStockMarketId(a.id) ? 1 : 0;
       const bStock = isStockMarketId(b.id) ? 1 : 0;
       if (aStock !== bStock) return aStock - bStock;
@@ -136,7 +140,8 @@ export function pickRecentReleases(
         b.movePct - a.movePct ||
         0
       );
-    });
+    })
+    .slice(0, maxItems);
 
   return scored.map(({ _releaseMs: _, ...row }, i) => ({
     ...row,
@@ -151,11 +156,13 @@ export function MoversSummary({
   snapshots: IndicatorSnapshot[];
   store: DataStore;
 }) {
-  const movers = pickRecentReleases(snapshots, store, 7);
+  const movers = pickRecentReleases(snapshots, store);
 
-  const weekLabel = (() => {
+  const rangeLabel = (() => {
     const end = new Date(todayUtcMidnightMs());
-    const start = new Date(todayUtcMidnightMs() - 6 * 24 * 60 * 60 * 1000);
+    const start = new Date(
+      todayUtcMidnightMs() - (RECENT_WINDOW_DAYS - 1) * 24 * 60 * 60 * 1000,
+    );
     const fmt = (d: Date) => `${d.getUTCMonth() + 1}.${d.getUTCDate()}`;
     return `${fmt(start)}–${fmt(end)}`;
   })();
@@ -183,17 +190,18 @@ export function MoversSummary({
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
             </span>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-teal-100/90">
-              This week · {weekLabel}
+              Last {RECENT_WINDOW_DAYS} days · {rangeLabel}
             </p>
           </div>
           <h2
             id="movers-heading"
             className="mt-1.5 font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-white sm:text-2xl"
           >
-            최근 자료 업데이트
+            최근 업데이트 자료
           </h2>
           <p className="mt-1 max-w-xl text-sm text-teal-50/75">
-            최근 일주일 발표·갱신된 지표만 모아 보여 줍니다.
+            최근 {RECENT_WINDOW_DAYS}일 발표·갱신된 지표를 최대 {RECENT_MAX_ITEMS}
+            개까지 보여 줍니다.
           </p>
         </div>
         <div className="flex shrink-0 flex-col items-end rounded-sm bg-white/10 px-3 py-2 ring-1 ring-white/15 backdrop-blur-sm">
@@ -208,7 +216,7 @@ export function MoversSummary({
 
       {movers.length === 0 ? (
         <p className="relative px-4 py-8 text-center text-sm text-teal-50/70 sm:px-5">
-          최근 일주일 내 발표된 지표가 없습니다.
+          최근 {RECENT_WINDOW_DAYS}일 내 발표된 지표가 없습니다.
         </p>
       ) : (
         <ul className="relative grid grid-cols-2 gap-px bg-white/10">
