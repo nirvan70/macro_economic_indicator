@@ -115,13 +115,13 @@ export function ForecastBanner({
               주요 기관 한국 경제전망
             </h2>
             <p className="mt-1 text-xs text-teal-100/85">
-              한국은행 · IMF · OECD의 성장률·소비자물가 전망치
+              한국은행 · IMF의 성장률·소비자물가 전망치
             </p>
           </div>
           <UpdateForecastButton />
         </div>
 
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2">
           {outlooks.map((outlook) => (
             <InstitutionCard
               key={outlook.institution}

@@ -14,7 +14,6 @@ type OutlookResponse = {
 const INSTITUTION_KO: Record<string, string> = {
   bok: "한국은행",
   imf: "IMF",
-  oecd: "OECD",
 };
 
 export function UpdateForecastButton() {
@@ -30,7 +29,7 @@ export function UpdateForecastButton() {
     setStatus("loading");
     setMessage(
       force
-        ? "한은·IMF·OECD 전망 자료를 확인하는 중…"
+        ? "한은·IMF 전망 자료를 확인하는 중…"
         : "앱 시작 시 전망 자료 갱신 여부 확인 중…",
     );
     try {

@@ -1,6 +1,5 @@
 import { fetchBokOutlook } from "@/lib/sources/bok-outlook";
 import { fetchImfOutlook } from "@/lib/sources/imf-outlook";
-import { fetchOecdOutlook } from "@/lib/sources/oecd-outlook";
 import type { InstitutionOutlook } from "@/lib/sources/outlook-types";
 import { readStore, writeStore } from "@/lib/store";
 
@@ -38,10 +37,10 @@ export type OutlookRefreshResult = {
 function orderOutlooks(
   list: InstitutionOutlook[],
 ): InstitutionOutlook[] {
-  const rank: Record<string, number> = { bok: 0, imf: 1, oecd: 2 };
-  return [...list].sort(
-    (a, b) => (rank[a.institution] ?? 9) - (rank[b.institution] ?? 9),
-  );
+  const rank: Record<string, number> = { bok: 0, imf: 1 };
+  return list
+    .filter((row) => row.institution === "bok" || row.institution === "imf")
+    .sort((a, b) => (rank[a.institution] ?? 9) - (rank[b.institution] ?? 9));
 }
 
 export async function readStoredOutlooks(): Promise<{
@@ -56,7 +55,7 @@ export async function readStoredOutlooks(): Promise<{
 }
 
 /**
- * Fetch BOK / IMF / OECD outlooks and persist when values change.
+ * Fetch BOK / IMF outlooks and persist when values change.
  * `force` ignores the startup TTL and always re-fetches.
  */
 export async function refreshInstitutionOutlooks(opts?: {
@@ -82,13 +81,9 @@ export async function refreshInstitutionOutlooks(opts?: {
     }
   }
 
-  log("[outlook] fetching BOK · IMF · OECD…");
-  const [bok, imf, oecd] = await Promise.all([
-    fetchBokOutlook(),
-    fetchImfOutlook(),
-    fetchOecdOutlook(),
-  ]);
-  const fresh = orderOutlooks([bok, imf, oecd]);
+  log("[outlook] fetching BOK · IMF…");
+  const [bok, imf] = await Promise.all([fetchBokOutlook(), fetchImfOutlook()]);
+  const fresh = orderOutlooks([bok, imf]);
   const prevById = new Map(cached.map((row) => [row.institution, row]));
   const updated: string[] = [];
   for (const row of fresh) {
@@ -124,10 +119,6 @@ export async function getOutlooksForDisplay(): Promise<InstitutionOutlook[]> {
   const result = await refreshInstitutionOutlooks({ force: false });
   if (result.outlooks.length > 0) return result.outlooks;
 
-  const [bok, imf, oecd] = await Promise.all([
-    fetchBokOutlook(),
-    fetchImfOutlook(),
-    fetchOecdOutlook(),
-  ]);
-  return orderOutlooks([bok, imf, oecd]);
+  const [bok, imf] = await Promise.all([fetchBokOutlook(), fetchImfOutlook()]);
+  return orderOutlooks([bok, imf]);
 }

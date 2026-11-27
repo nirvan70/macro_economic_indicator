@@ -141,7 +141,7 @@ export interface DataStore {
   upcoming: UpcomingRelease[];
   lastNotifiedAt?: string;
   pendingNotifications: IndicatorId[];
-  /** 주요 기관(한은·IMF·OECD) 경제전망 캐시 */
+  /** 주요 기관(한은·IMF) 경제전망 캐시 */
   outlooks?: StoredInstitutionOutlook[];
   outlooksCheckedAt?: string;
   outlooksUpdatedAt?: string;

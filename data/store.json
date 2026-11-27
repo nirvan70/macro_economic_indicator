@@ -549667,16 +549667,16 @@
       "institution": "bok",
       "nameKo": "한국은행",
       "nameEn": "BOK",
-      "title": "경제전망(2026년 8월)",
-      "publishedAt": "2026-08-27",
-      "sourceUrl": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?menuNo=200690&nttId=11064211",
-      "growthThisYear": 3.3,
-      "growthNextYear": 2.9,
+      "title": "경제전망(2026년 11월)",
+      "publishedAt": "2026-11-26",
+      "sourceUrl": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11067101&searchCnd=1&depth=201150&pageUnit=10&pageIndex=1&programType=newsData&menuNo=201265&oldMenuNo=200761",
+      "growthThisYear": 3.9,
+      "growthNextYear": 4.1,
       "cpiThisYear": 2.7,
-      "cpiNextYear": 2.3,
+      "cpiNextYear": 2.4,
       "thisYearLabel": "2026",
       "nextYearLabel": "2027",
-      "fetchedAt": "2026-11-26T01:47:59.251Z"
+      "fetchedAt": "2026-11-27T04:43:37.712Z"
     },
     {
       "institution": "imf",
@@ -549691,7 +549691,7 @@
       "cpiNextYear": 2.3,
       "thisYearLabel": "2026",
       "nextYearLabel": "2027",
-      "fetchedAt": "2026-11-26T01:47:58.363Z"
+      "fetchedAt": "2026-11-27T04:43:36.759Z"
     },
     {
       "institution": "oecd",
@@ -549706,9 +549706,9 @@
       "cpiNextYear": 2.7,
       "thisYearLabel": "2026",
       "nextYearLabel": "2027",
-      "fetchedAt": "2026-11-26T01:47:58.336Z"
+      "fetchedAt": "2026-11-27T04:43:36.788Z"
     }
   ],
-  "outlooksCheckedAt": "2026-11-26T01:47:59.252Z",
-  "outlooksUpdatedAt": "2026-11-26T01:47:37.529Z"
+  "outlooksCheckedAt": "2026-11-27T04:43:37.712Z",
+  "outlooksUpdatedAt": "2026-11-27T04:43:13.613Z"
 }
