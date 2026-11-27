@@ -331,8 +331,7 @@ export function SummaryCards({
               <div className="space-y-2">
                 {clusters.map((cluster, clusterIndex) => {
                   const spacedBlock =
-                    cluster.label === "노동시장" ||
-                    cluster.label === "물가" ||
+                    cluster.label === "물가 경상수지 노동시장" ||
                     cluster.label === "심리·경기종합" ||
                     cluster.label === "주식시장" ||
                     cluster.label === "금리" ||

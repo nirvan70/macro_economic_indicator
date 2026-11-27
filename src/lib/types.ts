@@ -153,7 +153,7 @@ export interface DataStore {
   /** 민간소비 형태별(내구·준내구·비내구) 전기비·전년동기비 */
   consumptionComponents?: ConsumptionComponentBundle[];
   consumptionComponentsUpdatedAt?: string;
-  /** 산업활동·소매판매·서비스판매 전년동월비 (관측값 observations는 전월비) */
+  /** 산업활동·소매판매·서비스생산 전년동월비 (관측값 observations는 전월비) */
   industrialYoy?: Observation[];
   retailYoy?: Observation[];
   serviceSalesYoy?: Observation[];

@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 
 const ICON_CLASS =
-  "h-[2.35rem] w-[2.35rem] drop-shadow-[0_2px_2px_rgba(15,23,42,0.18)] transition duration-300 ease-out group-hover:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] group-active:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] sm:h-[2.6rem] sm:w-[2.6rem]";
+  "h-[2.65rem] w-[2.65rem] drop-shadow-[0_2px_2px_rgba(15,23,42,0.18)] transition duration-300 ease-out group-hover:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] group-active:drop-shadow-[0_4px_6px_rgba(13,148,136,0.35)] sm:h-[2.9rem] sm:w-[2.9rem]";
 
 const NAV: {
   id: string;
@@ -294,10 +294,10 @@ const NAV: {
 ];
 
 const navItemClass =
-  "group flex w-full max-w-[6.5rem] touch-manipulation flex-col items-center gap-2 text-center transition select-none";
+  "group flex w-full max-w-[6rem] touch-manipulation flex-col items-center gap-2 text-center transition select-none";
 
 const iconShellClass =
-  "relative z-0 flex h-[4.35rem] w-[4.35rem] origin-center items-center justify-center rounded-full text-slate-800 transition-all duration-300 ease-out group-hover:z-10 group-hover:-translate-y-1.5 group-hover:scale-[1.28] group-hover:text-teal-900 group-active:z-10 group-active:-translate-y-1.5 group-active:scale-[1.22] group-active:text-teal-900 sm:h-[4.75rem] sm:w-[4.75rem]";
+  "relative z-0 flex h-[3.95rem] w-[3.95rem] origin-center items-center justify-center rounded-full text-slate-800 transition-all duration-300 ease-out group-hover:z-10 group-hover:-translate-y-1.5 group-hover:scale-[1.28] group-hover:text-teal-900 group-active:z-10 group-active:-translate-y-1.5 group-active:scale-[1.22] group-active:text-teal-900 sm:h-[4.3rem] sm:w-[4.3rem]";
 
 const iconShellStyleIdle = {
   background:

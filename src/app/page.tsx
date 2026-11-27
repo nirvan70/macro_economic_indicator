@@ -74,7 +74,7 @@ export default async function Home() {
           <aside className="w-full justify-self-end lg:sticky lg:top-12 lg:z-40 lg:row-span-2 lg:w-[7.75rem] lg:justify-self-end lg:self-start">
             <InstitutionLinks />
           </aside>
-          <div className="flex min-w-0 flex-col gap-14">
+          <div className="mt-6 flex min-w-0 flex-col gap-14 sm:mt-8">
             <SummaryCards snapshots={snapshots} store={store} />
             <GraphBuilderSection snapshots={snapshots} store={store} />
             <div id="related-news" className="scroll-mt-24">
